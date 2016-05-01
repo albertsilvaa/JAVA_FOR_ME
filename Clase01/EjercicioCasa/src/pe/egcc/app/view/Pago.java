@@ -104,8 +104,8 @@ public class Pago extends javax.swing.JFrame {
        int ViewHora=Integer.parseInt(textHora.getText());
        int ViewDia=Integer.parseInt(textDia.getText());
        double ViewPagoxhora=Double.parseDouble(textPagoxhora.getText());
-       proceso.Procesar(ViewHora, ViewDia, ViewPagoxhora);
-       PagoDto CPago=new PagoDto();
+       PagoDto CPago=new PagoDto(ViewHora, ViewDia, ViewPagoxhora);
+       proceso.Procesar(CPago);
        JOptionPane.showMessageDialog(this,"Ingresos : "+CPago.getIngresos()+"\n"+"Renta : "+CPago.getRenta()+"\n"+"Neto : "+CPago.getNeto());
     }//GEN-LAST:event_jButton1ActionPerformed
 

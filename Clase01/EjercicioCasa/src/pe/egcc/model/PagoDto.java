@@ -13,10 +13,23 @@ public class PagoDto {
    private int horas;
    private int dias;
    private double pagoxhoras;
-   private static double ingresos;
-   private static double renta;
-   private static double neto;
+   private  double ingresos;
+   private  double renta;
+   private  double neto;
 
+   public PagoDto(double ingreso,double renta,double neto)
+   {
+       this.ingresos=ingreso;
+       this.renta=renta;
+       this.neto=neto;
+   }
+    public PagoDto(int a,int b,double c)
+    {
+      this.dias=a;
+      this.horas=b;
+      this.pagoxhoras=c;
+              
+    }
     
 
     public PagoDto() {

@@ -12,30 +12,25 @@ import pe.egcc.model.PagoDto;
  */
 public class PagoService {
    
-    public void Procesar(int a, int b,double c) {
+    public void Procesar(PagoDto dto) {
     double ingreso=0;
     double renta=0;
     double neto=0;
-    ingreso=(a*b*c);
-    //System.out.println(ingreso);
+    ingreso=(dto.getPagoxhoras()*dto.getHoras()*dto.getDias());
+    
     if(ingreso>1500)
     {
         renta=ingreso*0.08;
-        neto=ingreso-renta;
-    }else{
-       
-        neto=ingreso;
-    }
-    
-    //System.out.println(neto);
-    //System.out.println(renta);
-    PagoDto dd= new PagoDto();
-    dd.setHoras(a);
-    dd.setDias(b);
-    dd.setPagoxhoras(c);
-    dd.setIngresos(ingreso);
-    dd.setRenta(renta);
-    dd.setNeto(neto);
+        
+    }else{ 
+       renta=0;
+    } 
+    neto=ingreso-renta;
+    System.out.println(neto);
+    System.out.println(renta);
+    dto.setIngresos(ingreso);
+    dto.setRenta(renta);
+    dto.setNeto(neto);
     
   }
 }
