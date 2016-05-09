@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pe.egcc.view;
+package pe.egcc.app.view;
 
 /**
  *
@@ -28,6 +28,13 @@ public class FormularioMDI extends javax.swing.JFrame {
     private void initComponents() {
 
         desktopPane = new javax.swing.JDesktopPane();
+        jToolBar2 = new javax.swing.JToolBar();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JToolBar.Separator();
+        jButton10 = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -44,6 +51,39 @@ public class FormularioMDI extends javax.swing.JFrame {
         aboutMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jToolBar2.setRollover(true);
+
+        jButton6.setText("jButton6");
+        jButton6.setFocusable(false);
+        jButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(jButton6);
+
+        jButton7.setText("jButton7");
+        jButton7.setFocusable(false);
+        jButton7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton7.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(jButton7);
+
+        jButton8.setText("jButton8");
+        jButton8.setFocusable(false);
+        jButton8.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton8.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(jButton8);
+
+        jButton9.setText("jButton9");
+        jButton9.setFocusable(false);
+        jButton9.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton9.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(jButton9);
+        jToolBar2.add(jSeparator2);
+
+        jButton10.setText("Salir");
+        jButton10.setFocusable(false);
+        jButton10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton10.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(jButton10);
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("File");
@@ -85,15 +125,30 @@ public class FormularioMDI extends javax.swing.JFrame {
         editMenu.add(cutMenuItem);
 
         copyMenuItem.setMnemonic('y');
-        copyMenuItem.setText("Copy");
+        copyMenuItem.setText("MCD y MCM");
+        copyMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                copyMenuItemActionPerformed(evt);
+            }
+        });
         editMenu.add(copyMenuItem);
 
         pasteMenuItem.setMnemonic('p');
-        pasteMenuItem.setText("Paste");
+        pasteMenuItem.setText("Fibonacci");
+        pasteMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pasteMenuItemActionPerformed(evt);
+            }
+        });
         editMenu.add(pasteMenuItem);
 
         deleteMenuItem.setMnemonic('d');
-        deleteMenuItem.setText("Delete");
+        deleteMenuItem.setText("Primo");
+        deleteMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteMenuItemActionPerformed(evt);
+            }
+        });
         editMenu.add(deleteMenuItem);
 
         menuBar.add(editMenu);
@@ -116,11 +171,18 @@ public class FormularioMDI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(desktopPane)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jToolBar2, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jToolBar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(desktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -135,6 +197,24 @@ public class FormularioMDI extends javax.swing.JFrame {
         desktopPane.add(view);
         view.setVisible(true);
     }//GEN-LAST:event_cutMenuItemActionPerformed
+
+    private void copyMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyMenuItemActionPerformed
+       McdyMcmView view =new McdyMcmView();
+        desktopPane.add(view);
+        view.setVisible(true);
+    }//GEN-LAST:event_copyMenuItemActionPerformed
+
+    private void pasteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pasteMenuItemActionPerformed
+       FibonacciView view =new FibonacciView();
+        desktopPane.add(view);
+        view.setVisible(true); // TODO add your handling code here:
+    }//GEN-LAST:event_pasteMenuItemActionPerformed
+
+    private void deleteMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteMenuItemActionPerformed
+        PrimoView view =new PrimoView();
+        desktopPane.add(view);
+        view.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_deleteMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,6 +262,13 @@ public class FormularioMDI extends javax.swing.JFrame {
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
+    private javax.swing.JToolBar.Separator jSeparator2;
+    private javax.swing.JToolBar jToolBar2;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;

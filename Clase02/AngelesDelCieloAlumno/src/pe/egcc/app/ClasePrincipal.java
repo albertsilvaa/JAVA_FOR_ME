@@ -5,7 +5,7 @@
  */
 package pe.egcc.app;
 
-import pe.egcc.view.FormularioMDI;
+import pe.egcc.app.view.FormularioMDI;
 
 /**
  *
